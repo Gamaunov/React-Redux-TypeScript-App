@@ -12,14 +12,15 @@ const UserList: React.FC = () => {
   }, []);
 
   if (loading) {
-    return <h1>Loading...</h1>;
+    return <h1 className="text-xl">Loading...</h1>;
   }
   if (error) {
-    return <h1>{error}</h1>;
+    return <h1 className="text-xl">{error}</h1>;
   }
 
   return (
-    <div>
+    <div className="flex flex-col items-start gap-2 font-dmsans font-semibold">
+      <h1 className="text-xl underline">User List</h1>
       {users.map((user) => (
         <div key={user.id}>{user.name}</div>
       ))}

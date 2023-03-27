@@ -15,24 +15,31 @@ const TodoList: React.FC = () => {
   }, [page]);
 
   if (loading) {
-    return <h1>Loading...</h1>;
+    return <h1 className="text-xl ">Loading...</h1>;
   }
   if (error) {
     return <h1>{error}</h1>;
   }
 
   return (
-    <div>
+    <div className="py-4 font-dmsans">
+      <h2 className="text-xl underline mb-4">User List</h2>
       {todos.map((todo) => (
-        <div key={todo.id}>
-          {todo.id} - {todo.title}
+        <div className="mb-3" key={todo.id}>
+          <span className="font-semibold">{todo.id}</span> - {todo.title}
         </div>
       ))}
-      {pages.map((p) => (
-        <div key={p.toString()} onClick={() => setTodoPage(p)}>
-          {p}
-        </div>
-      ))}
+      <div className="flex gap-1">
+        {pages.map((p) => (
+          <div
+            className="cursor-pointer rounded bg-slate-800 px-2 py-1 text-white hover:bg-slate-600"
+            key={p.toString()}
+            onClick={() => setTodoPage(p)}
+          >
+            {p}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
