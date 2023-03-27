@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import UerList from "../src/components/UserList";
+import TodoList from "./components/TodoList";
 
 const App = () => {
   return (
-    <div>App</div>
-  )
-}
+    <div>
+      <UerList />
+      <hr />
+      <TodoList />
+    </div>
+  );
+};
 
-export default App
+export default App;
