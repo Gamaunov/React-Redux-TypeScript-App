@@ -22,7 +22,7 @@ const TodoList: React.FC = () => {
   }
 
   return (
-    <div className="py-4 font-dmsans">
+    <div className="py-4 font-montserrat">
       <h2 className="text-xl underline mb-4">User List</h2>
       {todos.map((todo) => (
         <div className="mb-3" key={todo.id}>
